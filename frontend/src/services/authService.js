@@ -1,6 +1,5 @@
 import api from './api';
 
-// Store JWT token and user info in localStorage
 export const login = async (email, password) => {
   const response = await api.post('/auth/login', { email, password });
   const { token, user } = response.data;

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// Card component to display a single job in the list
 const JobCard = ({ job }) => {
   return (
     <div className="job-card">

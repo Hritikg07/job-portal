@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-// Job schema representing a job listing
 const jobSchema = new mongoose.Schema(
   {
     title: {

@@ -3,7 +3,6 @@ import JobCard from '../components/JobCard';
 import Loader from '../components/Loader';
 import { fetchJobs } from '../services/jobService';
 
-// Page that shows list of all jobs
 const JobListPage = () => {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(false);

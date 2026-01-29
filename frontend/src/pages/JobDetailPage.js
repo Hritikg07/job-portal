@@ -4,7 +4,6 @@ import Loader from '../components/Loader';
 import { fetchJobById } from '../services/jobService';
 import { getToken } from '../services/authService';
 
-// Page to show job details for a given ID
 const JobDetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -34,7 +33,6 @@ const JobDetailPage = () => {
   const handleApplyClick = () => {
     const token = getToken();
     if (!token) {
-      // If not logged in, redirect to login, then back to this apply page
       navigate('/login', { state: { from: { pathname: `/jobs/${id}/apply` } } });
     } else {
       navigate(`/jobs/${id}/apply`);

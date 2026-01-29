@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-// Application schema for when a user applies to a job
 const applicationSchema = new mongoose.Schema(
   {
     userId: {

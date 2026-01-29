@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 
-// User schema for authentication
-// Password will be stored as a bcrypt hash
 const userSchema = new mongoose.Schema(
   {
     name: {

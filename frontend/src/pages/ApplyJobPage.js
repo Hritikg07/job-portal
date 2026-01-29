@@ -3,7 +3,6 @@ import { useNavigate, useParams, Link } from 'react-router-dom';
 import Loader from '../components/Loader';
 import { fetchJobById, applyToJob } from '../services/jobService';
 
-// Page to apply to a specific job (protected route)
 const ApplyJobPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -40,7 +39,6 @@ const ApplyJobPage = () => {
     try {
       await applyToJob(id);
       setSuccess('Application submitted successfully!');
-      // Go back to job list after a short delay
       setTimeout(() => navigate('/'), 1200);
     } catch (err) {
       const message =
@@ -85,8 +83,6 @@ const ApplyJobPage = () => {
         <p className="job-description-full">{job.description}</p>
 
         <form onSubmit={handleApply} className="form">
-          {/* This form is intentionally simple for beginners.
-              In a real app, you might collect resume, cover letter, etc. */}
           {error && <div className="error-message">{error}</div>}
           {success && <div className="success-message">{success}</div>}
           <button

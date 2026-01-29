@@ -5,16 +5,12 @@ const User = require('../models/User');
 
 const router = express.Router();
 
-// Helper to generate JWT token
 const generateToken = (userId) => {
   return jwt.sign({ id: userId }, process.env.JWT_SECRET, {
-    expiresIn: '7d', // token valid for 7 days
+    expiresIn: '7d',
   });
 };
 
-// @route   POST /api/auth/register
-// @desc    Register a new user
-// @access  Public
 router.post('/register', async (req, res, next) => {
   try {
     const { name, email, password } = req.body;
@@ -51,9 +47,6 @@ router.post('/register', async (req, res, next) => {
   }
 });
 
-// @route   POST /api/auth/login
-// @desc    Login user and return JWT token
-// @access  Public
 router.post('/login', async (req, res, next) => {
   try {
     const { email, password } = req.body;

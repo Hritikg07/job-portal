@@ -1,6 +1,3 @@
-// Simple script to seed sample job data into MongoDB
-// Run with: npm run seed
-
 require('dotenv').config();
 const mongoose = require('mongoose');
 const Job = require('../models/Job');
@@ -10,7 +7,6 @@ const seedJobs = async () => {
   try {
     await connectDB();
 
-    // Clear existing jobs (optional, but useful for development)
     await Job.deleteMany({});
 
     const jobs = [

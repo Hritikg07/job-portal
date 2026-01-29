@@ -5,9 +5,6 @@ const authMiddleware = require('../middleware/authMiddleware');
 
 const router = express.Router();
 
-// @route   GET /api/jobs
-// @desc    Get all job listings
-// @access  Public
 router.get('/', async (req, res, next) => {
   try {
     const jobs = await Job.find({});
@@ -17,9 +14,6 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-// @route   GET /api/jobs/:id
-// @desc    Get a single job by ID
-// @access  Public
 router.get('/:id', async (req, res, next) => {
   try {
     const job = await Job.findById(req.params.id);
@@ -32,9 +26,6 @@ router.get('/:id', async (req, res, next) => {
   }
 });
 
-// @route   POST /api/jobs/apply
-// @desc    Apply to a job (requires authentication)
-// @access  Private
 router.post('/apply', authMiddleware, async (req, res, next) => {
   try {
     const { jobId } = req.body;

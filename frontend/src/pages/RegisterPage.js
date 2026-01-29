@@ -3,7 +3,6 @@ import { useNavigate, Link } from 'react-router-dom';
 import { register } from '../services/authService';
 import Loader from '../components/Loader';
 
-// Registration page for new users
 const RegisterPage = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -22,7 +21,6 @@ const RegisterPage = () => {
     try {
       await register(name, email, password);
       setSuccess('Registration successful! You can now log in.');
-      // Redirect to login after short delay
       setTimeout(() => {
         navigate('/login');
       }, 1000);

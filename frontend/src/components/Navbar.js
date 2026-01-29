@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { getCurrentUser, logout } from '../services/authService';
 
-// Simple responsive navigation bar
 const Navbar = () => {
   const navigate = useNavigate();
   const user = getCurrentUser();

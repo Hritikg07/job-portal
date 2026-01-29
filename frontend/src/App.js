@@ -8,7 +8,6 @@ import JobDetailPage from './pages/JobDetailPage';
 import ApplyJobPage from './pages/ApplyJobPage';
 import ProtectedRoute from './routes/ProtectedRoute';
 
-// Root component that sets up routing
 const App = () => {
   return (
     <Router>
@@ -18,11 +17,8 @@ const App = () => {
           <Routes>
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
-
             <Route path="/" element={<JobListPage />} />
             <Route path="/jobs/:id" element={<JobDetailPage />} />
-
-            {/* Protected route: only logged-in users can apply */}
             <Route
               path="/jobs/:id/apply"
               element={
